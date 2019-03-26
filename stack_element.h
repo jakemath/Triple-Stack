@@ -25,9 +25,9 @@ template <class T>
 class stack_element
 {
 public:
-    stack_element<T> () : data (0), index (-1), stack_number (0), exist (0) {}
-    stack_element<T> (T input, unsigned short idx, unsigned short stack) : data (input), index (idx), stack_number (stack), exist (1) {}
-    ~stack_element<T> ();
+    stack_element<T>() : data(0), index(-1), stack_number(0), exist(0) {}
+    stack_element<T>(T input, unsigned short idx, unsigned short stack) : data (input), index (idx), stack_number (stack), exist (1) {}
+    ~stack_element<T>();
     
     bool exists() { return exist; }    // Boolean indicating if array element contains valid data
     void set_exists (bool e) { exist = e; }
@@ -40,7 +40,7 @@ public:
     
     void operator = (stack_element* n);
     
-    
+private:    
     T data;     // Stack data type
     unsigned short index;    // Array position
     unsigned short stack_number; // Number between 1 and 3 specifying which stack the element is a member of
@@ -57,6 +57,6 @@ template <class T>
 stack_element<T>* top (unsigned short stack_num, stack_element<T> a[]);
 
 template <class T>
-void print_array(stack_element<T> a[]);    // Helper function to show contents of array in driver program
+void print_array (stack_element<T> a[]);    // Helper function to show contents of array in driver program
 
 #endif /* stack_element_h */
