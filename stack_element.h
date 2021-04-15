@@ -30,7 +30,6 @@ class stack_element {
             stack_number(stack), 
             exist(1) {}
         ~stack_element<T>();
-
         bool exists() { return exist; }    // Boolean indicating if array element contains valid data
         void set_exists (bool e) { exist = e; }
         T get_data() { return data; }
